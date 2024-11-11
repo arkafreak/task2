@@ -15,7 +15,8 @@ body {
 
 /* Header styling */
 header {
-    background: linear-gradient(45deg, #ee2020, #dde013); /* Adjust the colors and angle */
+    background: linear-gradient(45deg, #ee2020, #dde013);
+    /* Adjust the colors and angle */
     color: #fff;
     padding: 1em;
     text-align: center;
@@ -37,20 +38,31 @@ h1 img {
 
 /* services image modification */
 #services a img {
-    width: 400px; /* Set width */
-    height: 100px; /* Set height */
-    background-color: rgb(49, 44, 44); /* Semi-transparent red background */
-    border-radius: 10px; /* Rounded corners for the background */
-    display: block; /* Make it a block element to ensure margin works */
-    margin-top: 20px; /* Space above the logo to move it down */
-    margin-bottom: 20px; /* Space below the logo */
-    padding: 10px; /* Padding inside the logo background */
-    box-shadow: 0 4px 8px rgb(0, 0, 0); /* Subtle shadow around the logo */
-    transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+    width: 400px;
+    /* Set width */
+    height: 100px;
+    /* Set height */
+    background-color: rgb(49, 44, 44);
+    /* Semi-transparent red background */
+    border-radius: 10px;
+    /* Rounded corners for the background */
+    display: block;
+    /* Make it a block element to ensure margin works */
+    margin-top: 20px;
+    /* Space above the logo to move it down */
+    margin-bottom: 20px;
+    /* Space below the logo */
+    padding: 10px;
+    /* Padding inside the logo background */
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+    /* Subtle shadow around the logo */
+    transition: transform 0.3s ease-in-out;
+    /* Smooth transition for hover effect */
 }
 
 #services a img:hover {
-    transform: scale(1.05); /* Slightly enlarge the logo when hovered */
+    transform: scale(1.05);
+    /* Slightly enlarge the logo when hovered */
 }
 
 /* Navigation styling */
@@ -190,6 +202,13 @@ footer a:hover {
         display: block;
     }
 
+    .drawer ul li a:hover {
+        background-color: #949393;
+        display: flex;
+        padding: 20px;
+        border-radius: 5px;
+    }
+
     /* Close button inside the drawer */
     .close-btn {
         background: none;
@@ -235,10 +254,14 @@ footer a:hover {
         /* Hide the close button */
     }
 }
+
 .link-preview {
     margin-top: 20px;
     padding: 10px;
-    background-color: #f4f4f4;  /* Light background color */
-    border-radius: 8px;  /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #f4f4f4;
+    /* Light background color */
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
 }
