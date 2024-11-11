@@ -217,3 +217,10 @@ footer a:hover {
         /* Hide the close button */
     }
 }
+.link-preview {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f4f4f4;  /* Light background color */
+    border-radius: 8px;  /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
