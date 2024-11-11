@@ -38,27 +38,17 @@ h1 img {
 
 /* services image modification */
 #services a img {
-    width: 400px;
-    /* Set width */
-    height: 100px;
-    /* Set height */
-    background-color: rgb(49, 44, 44);
-    /* Semi-transparent red background */
-    border-radius: 10px;
-    /* Rounded corners for the background */
-    display: block;
-    /* Make it a block element to ensure margin works */
-    margin-top: 20px;
-    /* Space above the logo to move it down */
-    margin-bottom: 20px;
-    /* Space below the logo */
-    padding: 10px;
-    /* Padding inside the logo background */
-    box-shadow: 0 4px 8px rgb(0, 0, 0);
-    /* Subtle shadow around the logo */
-    transition: transform 0.3s ease-in-out;
-    /* Smooth transition for hover effect */
+    width: 400px; /* Set width */
+    height: 100px; /* Set height */
+    background-color: rgb(49, 44, 44); /* Semi-transparent dark background */
+    border-radius: 10px; /* Rounded corners */
+    display: block; /* Make it a block element to enable centering */
+    margin: 20px auto; /* Center the image and add space above and below */
+    padding: 10px; /* Padding inside the background */
+    box-shadow: 0 4px 8px rgb(0, 0, 0); /* Subtle shadow around the logo */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
 }
+
 
 #services a img:hover {
     transform: scale(1.05);
@@ -75,15 +65,18 @@ nav ul {
 
 nav ul li a {
     color: #fff;
-    text-align: left;
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
     text-decoration: none;
+    border-radius: 10px;
     padding: 0.5em 1em;
     transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover {
     background-color: #555;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 /* Main content area */
@@ -196,17 +189,22 @@ footer a:hover {
     }
 
     .drawer ul li a {
+        display: list-item;
+        border-radius: 5px;
+        margin: 5px;
         color: white;
+        /* Inherit color from parent or set a custom color */
         text-decoration: none;
-        font-size: 18px;
-        display: block;
+        /* Remove underline */
+        border: 2px solid #949393;
+        padding: 10px;
+        transition: background-color 0.3s ease;
+        /* Smooth hover transition */
     }
 
     .drawer ul li a:hover {
         background-color: #949393;
-        display: flex;
-        padding: 20px;
-        border-radius: 5px;
+        padding: px;
     }
 
     /* Close button inside the drawer */
