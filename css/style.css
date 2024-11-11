@@ -135,6 +135,18 @@ footer a:hover {
 /* Media Queries */
 @media (max-width: 768px) {
 
+    #services a img {
+        width: 250px; /* Set width */
+        height: 70px; /* Set height */
+        background-color: rgb(49, 44, 44); /* Semi-transparent dark background */
+        border-radius: 10px; /* Rounded corners */
+        display: block; /* Make it a block element to enable centering */
+        margin: 20px auto; /* Center the image and add space above and below */
+        padding: 10px; /* Padding inside the background */
+        box-shadow: 0 4px 8px rgb(0, 0, 0); /* Subtle shadow around the logo */
+        transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+    }
+
     /* Hide regular navigation links */
     nav ul {
         display: none;
