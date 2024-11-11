@@ -1,0 +1,219 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body styling */
+body {
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f9;
+}
+
+/* Header styling */
+header {
+    background: linear-gradient(45deg, #ee2020, #dde013); /* Adjust the colors and angle */
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 0.5em;
+}
+
+h1 img {
+    height: 50px;
+    /* Adjust the size of the logo */
+    margin-right: 10px;
+    /* Space between the logo and the text */
+    vertical-align: middle;
+    /* Align the logo vertically with the text */
+    margin-top: 5px;
+}
+
+/* Navigation styling */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+nav ul li a {
+    color: #fff;
+    text-align: left;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Main content area */
+main {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 0 1em;
+}
+
+/* Section styling */
+section {
+    margin-bottom: 2em;
+    padding: 1em;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: #333;
+    margin-bottom: 0.5em;
+}
+
+/* Article styling */
+article {
+    margin-bottom: 1.5em;
+}
+
+article h3 {
+    color: #666;
+    margin-bottom: 0.5em;
+}
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    margin-top: 2em;
+}
+
+footer p {
+    margin: 0.5em 0;
+}
+
+footer a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+
+    /* Hide regular navigation links */
+    nav ul {
+        display: none;
+        /* Hide the regular navigation */
+    }
+
+    /* Button for the menu toggle (hamburger icon) */
+    button.menu-toggle {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+        position: absolute;
+        /* Fix position on the left side */
+        left: 10px;
+        /* Place it on the left side */
+        top: 30px;
+        display: block;
+        /* Show the hamburger icon */
+    }
+
+    /* Drawer styles */
+    .drawer {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        /* Start off-screen */
+        width: 250px;
+        height: 100%;
+        background-color: #333;
+        transition: left 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .drawer ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        /* Align items vertically */
+        justify-content: flex-start;
+        /* Align items from the top */
+        width: 100%;
+        text-align: center;
+    }
+
+    .drawer ul li {
+        padding: 15px;
+    }
+
+    .drawer ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        display: block;
+    }
+
+    /* Close button inside the drawer */
+    .close-btn {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+        position: absolute;
+        /* Fix position on the left side */
+        left: 10px;
+        /* Place it on the left side */
+        top: 30px;
+        display: block;
+        /* Show the close icon */
+    }
+
+}
+
+/* Styles for the open drawer */
+.drawer.open {
+    left: 0;
+}
+
+/* Hide menu toggle (bars icon) and drawer (on screens larger than 768px) */
+@media (min-width: 769px) {
+    button.menu-toggle {
+        display: none;
+        /* Hide the hamburger icon */
+    }
+
+    .drawer {
+        display: none;
+        /* Hide the drawer menu */
+    }
+
+    nav ul {
+        display: flex;
+        /* Show the regular navigation */
+    }
+
+    .close-btn {
+        display: none;
+        /* Hide the close button */
+    }
+}
