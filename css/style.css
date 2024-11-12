@@ -15,15 +15,20 @@ body {
 
 /* Header styling */
 header {
-    background: linear-gradient(45deg, #ee2020, #dde013);
-    /* Adjust the colors and angle */
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.226), rgba(0, 102, 170, 0.712)), url('https://www.w3schools.com/w3images/ocean.jpg');
+    background-size: cover;
+    /* Makes sure the image covers the entire header */
+    background-position: center;
+    /* Centers the image */
     color: #fff;
     padding: 1em;
     text-align: center;
 }
 
+
 header h1 {
     margin-bottom: 0.5em;
+    font-weight: bold;
 }
 
 h1 img {
@@ -34,6 +39,27 @@ h1 img {
     vertical-align: middle;
     /* Align the logo vertically with the text */
     margin-top: 5px;
+}
+
+#about a img {
+    width: 50px;
+    /* Set width */
+    height: 50px;
+    /* Set height */
+    background-color: rgb(255, 255, 255);
+    /* Semi-transparent dark background */
+    border-radius: 10px;
+    /* Rounded corners */
+    display: block;
+    /* Make it a block element to enable centering */
+    margin: 20px auto;
+    /* Center the image and add space above and below */
+    padding: 10px;
+    /* Padding inside the background */
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+    /* Subtle shadow around the logo */
+    transition: transform 0.3s ease-in-out;
+    /* Smooth transition for hover effect */
 }
 
 /* services image modification */
@@ -195,7 +221,7 @@ footer a:hover {
         /* Start off-screen */
         width: 250px;
         height: 100%;
-        background-color: #333;
+        background-color: #000000c5;
         transition: left 0.3s ease;
         display: flex;
         justify-content: center;
@@ -361,9 +387,21 @@ footer a:hover {
     display: block;
 }
 
+#openFormButton {
+    background-color: rgb(66, 111, 207);
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: rgb(40, 165, 46);
+    border-radius: 10px;
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+}
+
 /* Style for the close button */
 #closeFormButton {
-    position: absolute; 
+    position: absolute;
     top: 5px;
     right: 20px;
     background-color: red;
