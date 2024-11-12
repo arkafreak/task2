@@ -21,10 +21,11 @@
         </button>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
+                <li><a href="#">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#" id="cameraButton">Camera</a></li>
             </ul>
         </nav>
     </header>
@@ -35,10 +36,11 @@
             <i class="fas fa-times"></i>
         </button>
         <ul>
-            <li><a href="#home">Home</a></li>
+            <li><a href="#">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="#" id="cameraButton">Camera</a></li>
         </ul>
     </div>
 
@@ -117,6 +119,7 @@
                 <p>Reach out to us with any inquiries or feedback.</p>
             </article>
         </section>
+
     </main>
 
     <!-- Footer section with contact information and copyright -->
@@ -124,9 +127,16 @@
         <p>&copy; 2024 Freak Productions. All rights reserved.</p>
         <p><a href="mailto:ghost.freak11@example.com">support@gmail.com</a></p>
     </footer>
-
+    <div id="camera">
+        <!-- Camera Overlay Container -->
+        <!-- Camera Section Overlay -->
+        <div id="cameraContainer" style="display: none;">
+            <button class="close-camera-btn" id="closeCameraBtn">&times;</button>
+            <video id="cameraFeed" autoplay></video>
+            <p id="noCameraMessage" style="display: none;">No camera detected</p>
+        </div>
+    </div>
     <script src="js/script.js"></script>
-
 </body>
 
 </html>

@@ -31,22 +31,22 @@ drawer.addEventListener('click', (e) => {
 let startX = 0;
 let endX = 0;
 
-drawer.addEventListener('touchstart', (e) => {
+document.addEventListener('touchstart', (e) => {
     startX = e.touches[0].clientX;
 });
 
-drawer.addEventListener('touchmove', (e) => {
+document.addEventListener('touchmove', (e) => {
     endX = e.touches[0].clientX;
 });
 
-drawer.addEventListener('touchend', () => {
+document.addEventListener('touchend', () => {
     const swipeDistance = endX - startX;
-    
-    if (swipeDistance > 50) {
-        // Swipe right to open
+
+    if (swipeDistance > 50 && !drawer.classList.contains('open')) {
+        // Swipe right to open if drawer is not already open
         drawer.classList.add('open');
-    } else if (swipeDistance < -50) {
-        // Swipe left to close
+    } else if (swipeDistance < -50 && drawer.classList.contains('open')) {
+        // Swipe left to close if drawer is open
         drawer.classList.remove('open');
     }
 });
@@ -120,5 +120,50 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => {
             window.location.href = "index.html"; // Redirect to index page
         }, 2500); // Allow animation to complete before redirect
+    }
+});
+// Get the elements
+const cameraButtons = document.querySelectorAll('#cameraButton');
+const cameraContainer = document.getElementById('cameraContainer');
+const closeCameraBtn = document.getElementById('closeCameraBtn');
+const cameraFeed = document.getElementById('cameraFeed');
+const noCameraMessage = document.getElementById('noCameraMessage');
+
+// Function to handle opening the camera popup
+function openCamera() {
+    // Show the camera container and apply blur to the background
+    cameraContainer.style.display = 'flex';
+    document.body.classList.add('camera-active');  // Add blur to background
+
+    // Try to access the camera
+    navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+            cameraFeed.srcObject = stream;
+            noCameraMessage.style.display = 'none';  // Hide "no camera" message
+        })
+        .catch(error => {
+            console.error('Error accessing camera', error);
+            noCameraMessage.style.display = 'block';  // Show error message if no camera is found
+        });
+}
+
+// Add event listener to both camera buttons
+cameraButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();  // Prevent the default behavior of the link
+        openCamera();
+    });
+});
+
+// When the close button is clicked, hide the camera container and remove blur
+closeCameraBtn.addEventListener('click', () => {
+    cameraContainer.style.display = 'none';
+    document.body.classList.remove('camera-active');  // Remove blur from the background
+
+    // Stop the camera stream when closing the overlay (optional for better performance)
+    const stream = cameraFeed.srcObject;
+    if (stream) {
+        const tracks = stream.getTracks();
+        tracks.forEach(track => track.stop());
     }
 });
