@@ -2,13 +2,55 @@ const menuToggle = document.querySelector('.menu-toggle');
 const closeBtn = document.querySelector('.close-btn');
 const drawer = document.querySelector('.drawer');
 
-menuToggle.addEventListener('click', () => {
+// Function to open the drawer
+menuToggle.addEventListener('click', (e) => {
     drawer.classList.add('open');
+    e.stopPropagation(); // Prevent click event from bubbling up
 });
 
-closeBtn.addEventListener('click', () => {
+// Function to close the drawer when clicking on the close button
+closeBtn.addEventListener('click', (e) => {
     drawer.classList.remove('open');
+    e.stopPropagation();
 });
+
+// Function to close the drawer when clicking outside of it
+document.addEventListener('click', (e) => {
+    if (!drawer.contains(e.target) && !menuToggle.contains(e.target)) {
+        drawer.classList.remove('open');
+    }
+});
+
+// Stop event propagation for clicks inside the drawer
+drawer.addEventListener('click', (e) => {
+    e.stopPropagation();
+});
+
+
+// for gesture controller of the drawer
+let startX = 0;
+let endX = 0;
+
+drawer.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+});
+
+drawer.addEventListener('touchmove', (e) => {
+    endX = e.touches[0].clientX;
+});
+
+drawer.addEventListener('touchend', () => {
+    const swipeDistance = endX - startX;
+    
+    if (swipeDistance > 50) {
+        // Swipe right to open
+        drawer.classList.add('open');
+    } else if (swipeDistance < -50) {
+        // Swipe left to close
+        drawer.classList.remove('open');
+    }
+});
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const openFormButton = document.getElementById("openFormButton");
