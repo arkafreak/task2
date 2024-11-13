@@ -64,7 +64,22 @@ h1 img {
 }
 
 /* Navigation styling */
-nav ul {
+
+.navbar-nav .nav-link {
+    font-size: large;
+    color: white;
+    padding: 0.5em 1em;
+    
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #000000;
+    border-radius: 10px;
+    color: #ffffff;
+}
+/* nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
@@ -85,7 +100,7 @@ nav ul li a {
 nav ul li a:hover {
     background-color: #555;
     border-radius: 10px;
-}
+} */
 
 /* Main content area */
 main {
@@ -156,7 +171,7 @@ footer a:hover {
     }
 
     /* Hide regular navigation links */
-    nav ul {
+    .navbar-nav .nav-link {
         display: none;
     }
 
