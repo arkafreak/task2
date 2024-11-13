@@ -79,28 +79,6 @@ h1 img {
     border-radius: 10px;
     color: #ffffff;
 }
-/* nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 1em;
-}
-
-nav ul li a {
-    color: #fff;
-    text-align: center;
-    font-weight: bold;
-    font-size: large;
-    text-decoration: none;
-    border-radius: 10px;
-    padding: 0.5em 1em;
-    transition: background-color 0.3s ease;
-}
-
-nav ul li a:hover {
-    background-color: #555;
-    border-radius: 10px;
-} */
 
 /* Main content area */
 main {
