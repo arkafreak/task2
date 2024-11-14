@@ -167,3 +167,42 @@ closeCameraBtn.addEventListener('click', () => {
         tracks.forEach(track => track.stop());
     }
 });
+
+
+// Select the container where the data will be displayed
+const userInfo = document.getElementById('userInfo');
+
+// Function to fetch random user data
+function fetchUserData() {
+    // API endpoint for random user data
+    const apiURL = 'https://randomuser.me/api/';
+
+    fetch(apiURL)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Display user data on the page
+            const user = data.results[0];
+            const userHTML = `
+                <p><strong>Name:</strong> ${user.name.first} ${user.name.last}</p>
+                <p><strong>Email:</strong> ${user.email}</p>
+                <p><strong>Location:</strong> ${user.location.city}, ${user.location.country}</p>
+                <img src="${user.picture.medium}" alt="User Picture">
+            `;
+            userInfo.innerHTML = userHTML;
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+            userInfo.innerHTML = '<p>Error loading user data. Please try again later.</p>';
+        });
+}
+
+// Call fetchUserData every 3 seconds to refresh the data
+setInterval(fetchUserData, 3000);
+
+// Call the function to fetch data when the page loads
+document.addEventListener('DOMContentLoaded', fetchUserData);
